@@ -13,10 +13,10 @@ shared_scripts {
 
 client_scripts {
 	'client/main.lua',
-	'client/wounding.lua',
-	'client/laststand.lua',
+	--'client/wounding.lua',
+	--'client/laststand.lua',
 	'client/job.lua',
-	'client/dead.lua',
+	--'client/dead.lua',
 	'@PolyZone/client.lua',
 	'@PolyZone/BoxZone.lua',
 	'@PolyZone/ComboZone.lua'
