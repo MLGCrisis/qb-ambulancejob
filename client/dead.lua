@@ -163,12 +163,29 @@ CreateThread(function()
                             loadAnimDict(inBedDict)
                             TaskPlayAnim(ped, inBedDict, inBedAnim, 1.0, 1.0, -1, 1, 0, 0, 0, 0)
                         end
-                    else
-                        if not IsEntityPlayingAnim(ped, deadAnimDict, deadAnim, 3) then
+                    else --removed for wp placeables
+                        --[[if not IsEntityPlayingAnim(ped, deadAnimDict, deadAnim, 3) then
+                            loadAnimDict(deadAnimDict)
+                            TaskPlayAnim(ped, deadAnimDict, deadAnim, 1.0, 1.0, -1, 1, 0, 0, 0, 0)
+                        end]]
+                        --added for wp placeables
+                        if (
+                            not exports['wp-placeables']:IsPlayerSittingOnPlaceableProp() and 
+                            not IsEntityPlayingAnim(ped, deadAnimDict, deadAnim, 3)
+                        ) then
                             loadAnimDict(deadAnimDict)
                             TaskPlayAnim(ped, deadAnimDict, deadAnim, 1.0, 1.0, -1, 1, 0, 0, 0, 0)
                         end
+                        --till here
                     end
+                end
+
+                if (
+                    not exports['wp-placeables']:IsPlayerSittingOnPlaceableProp() and 
+                    not IsEntityPlayingAnim(ped, deadAnimDict, deadAnim, 3)
+                ) then
+                    loadAnimDict(deadAnimDict)
+                    TaskPlayAnim(ped, deadAnimDict, deadAnim, 1.0, 1.0, -1, 1, 0, 0, 0, 0)
                 end
 
                 SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
