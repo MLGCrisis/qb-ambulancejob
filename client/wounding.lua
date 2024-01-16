@@ -50,6 +50,7 @@ RegisterNetEvent('hospital:client:UseIfaks', function()
         TriggerServerEvent('hospital:server:removeIfaks')
         TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['ifaks'], 'remove')
         TriggerServerEvent('hud:server:RelieveStress', math.random(12, 24))
+        TriggerEvent('wais:addmissionxp:useifaks', 1) -- added by Pamela for wais battleass 
         SetEntityHealth(ped, GetEntityHealth(ped) + 10)
         if painkillerAmount < 3 then
             painkillerAmount = painkillerAmount + 1
