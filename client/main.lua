@@ -304,6 +304,7 @@ local function LeaveBed()
     Wait(4000)
     ClearPedTasks(player)
     TriggerServerEvent('hospital:server:LeaveBed', bedOccupying)
+    TriggerEvent('wais:addmissionxp:visithospital', 1) --added by pamela for wais battlepass
     FreezeEntityPosition(bedObject, true)
     RenderScriptCams(0, true, 200, true, true)
     DestroyCam(cam, false)
